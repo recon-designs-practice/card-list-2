@@ -1,7 +1,5 @@
 CREATE DATABASE cardlist;
 
-CREATE DATABASE cardbrandlist;
-
 CREATE TABLE cardtable(
     card_id SERIAL PRIMARY KEY,
     card_year integer,
@@ -18,8 +16,9 @@ CREATE TABLE cardtable(
     team_name_short text
 );
 
-CREATE TABLE cardbrand(
+-- CREATE DATABASE cardbrandlist;
+
+CREATE TABLE brandtable(
     brand_id SERIAL PRIMARY KEY,
-    brand_name VARCHAR(100),
-    brand_year integer
+    brand_name text
 );

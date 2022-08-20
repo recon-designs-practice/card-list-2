@@ -6,7 +6,9 @@ const pool = require('./db')
 app.use(cors())
 app.use(express.json())
 
-// create a card
+/**
+ * Add a card
+ */
 app.post('/cards', async (req, res) => {
     try {
         const {
@@ -76,7 +78,48 @@ app.post('/cards', async (req, res) => {
     }
 })
 
-// create a brand
+/**
+ * Get all cards
+ */
+app.get('/cards', async (req, res) => {
+    try {
+        const allCards = await pool.query(
+            `SELECT * FROM cardtable`
+        )
+
+        res.json(allCards.rows)
+    } catch (error) {
+        console.error(error.message)
+    }
+})
+
+/**
+ * Add a brand
+ */
+app.post('/brands', async (req, res) => {
+    try {
+        const { brand_name } = req.body
+
+        const newBrand = await pool.query(
+            `INSERT INTO brandtable(brand_name) VALUES ($1) RETURNING *`, [brand_name]
+        )
+
+        res.json(newBrand.rows[0])
+    } catch (error) {
+        console.error(error.message)
+    }
+})
+
+/**
+ * Get all brands
+ */
+app.get('/brands', async (req, res) => {
+    const allBrands = await pool.query(
+        `SELECT * FROM brandtable`
+    )
+
+    res.json(allBrands.rows)
+})
 
 // get all cards
 
