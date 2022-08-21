@@ -14,15 +14,15 @@ const AppContainer = styled.div`
   display: grid;
   grid-template-columns: 80px repeat(12, 1fr) 80px;
   grid-template-rows: auto;
-  border: 2px solid red;
+  background: #F2F1EF;
 `
 
 const Main = styled.main`
   grid-column: 2 / 14;
+  padding-top: 20px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: auto;
-  background: lightblue;
 `
 
 const linksArr = [
