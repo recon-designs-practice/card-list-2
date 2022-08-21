@@ -94,6 +94,22 @@ app.get('/cards', async (req, res) => {
 })
 
 /**
+ * Get card by id
+ */
+app.get('/cards/:id', async (req, res) => {
+    try {
+        const { id } = req.params
+        const selectedCard = await pool.query(
+            `SELECT * FROM cardtable WHERE card_id = $1`, [id]
+        )
+
+        res.json(selectedCard.rows[0])
+    } catch (error) {
+        console.error(error.message)
+    }
+})
+
+/**
  * Add a brand
  */
 app.post('/brands', async (req, res) => {
@@ -121,13 +137,28 @@ app.get('/brands', async (req, res) => {
     res.json(allBrands.rows)
 })
 
-// get all cards
+/**
+ * Get brand by id
+ */
+app.get('/brands/:id', async (req, res) => {
+    try {
+        const { id } = req.params
+        const selectedBrand = await pool.query(
+            `SELECT * FROM brandtable WHERE brand_id = $1`, [id]
+        )
 
-// get all brands
+        res.json(selectedBrand.rows[0])
+    } catch (error) {
+       console.error(error.message) 
+    }
+})
 
-// get a card
 
-// get a brand
+
+
+
+
+
 
 // edit a card
 
