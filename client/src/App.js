@@ -6,10 +6,12 @@ import {
   ViewCardsPage, 
   ViewBrandsPage 
 } from './pages'
+import { Header } from './components'
 
 function App() {
   return (
     <div>
+      <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/add-card" element={<AddCardPage />} />
