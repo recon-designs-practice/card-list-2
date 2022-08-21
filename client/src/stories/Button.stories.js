@@ -10,5 +10,6 @@ const Template = (args) => <Button {...args} />
 
 export const PrimaryButton = Template.bind({})
 PrimaryButton.args = {
-    children: <Paragraph1>Primary</Paragraph1>
+    children: <Paragraph1>Primary</Paragraph1>,
+    onclick: () => alert('Primary button clicked')
 }

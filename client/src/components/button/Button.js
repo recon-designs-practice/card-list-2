@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const StyledButton = styled.button`
     padding: 10px 12px;
@@ -23,8 +24,19 @@ const StyledButton = styled.button`
     }
 `
 
-export default function Button({ children }) {
+export default function Button({ children, onclick }) {
   return (
-    <StyledButton>{children}</StyledButton>
+    <StyledButton onClick={onclick}>{children}</StyledButton>
   )
+}
+
+Button.propTypes = {
+    /**
+     * Children to be passed to the button
+     */
+    children: PropTypes.any,
+    /**
+     * Function to be called when button is clicked
+     */
+    onclick: PropTypes.func
 }
