@@ -110,6 +110,67 @@ app.get('/cards/:id', async (req, res) => {
 })
 
 /**
+ * Edit card by id
+ */
+app.put('/cards/:id', async (req, res) => {
+    try {
+        const { id } = req.params
+        const {
+            card_year,
+            card_brand,
+            card_set,
+            card_number,
+            card_sn_number,
+            card_sn_total,
+            card_attributes,
+            player_first_name,
+            player_second_name,
+            team_city,
+            team_name,
+            team_name_short
+        } = req.body
+
+        const updatedCard = await pool.query(
+            `
+            UPDATE cardtable
+            SET card_year = $1,
+                card_brand = $2,
+                card_set = $3,
+                card_number = $4,
+                card_sn_number = $5,
+                card_sn_total = $6,
+                card_attributes = $7,
+                player_first_name = $8,
+                player_second_name = $9,
+                team_city = $10,
+                team_name = $11,
+                team_name_short = $12
+            WHERE card_id = $13
+            `,
+            [
+                card_year,
+                card_brand,
+                card_set,
+                card_number,
+                card_sn_number,
+                card_sn_total,
+                card_attributes,
+                player_first_name,
+                player_second_name,
+                team_city,
+                team_name,
+                team_name_short,
+                id
+            ]
+        )
+
+        res.json('Item updated')
+    } catch (error) {
+       console.error(error.message) 
+    }
+})
+
+/**
  * Add a brand
  */
 app.post('/brands', async (req, res) => {
@@ -160,7 +221,7 @@ app.get('/brands/:id', async (req, res) => {
 
 
 
-// edit a card
+
 
 // edit a brand
 
