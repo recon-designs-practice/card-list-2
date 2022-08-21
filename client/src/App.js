@@ -7,8 +7,6 @@ import {
   ViewCardsPage, 
   ViewBrandsPage 
 } from './pages'
-import { Header } from './components/header'
-import HeaderNav from './components/header/HeaderNav'
 
 const AppContainer = styled.div`
   display: grid;
@@ -25,19 +23,9 @@ const Main = styled.main`
   background: lightblue;
 `
 
-const linksArr = [
-  {text: 'Home', path: '/'},
-  {text: 'Add card', path: '/add-card'},
-  {text: 'Cards', path: '/view-cards'},
-  {text: 'Brands', path: '/view-brands'}
-]
-
 function App() {
   return (
     <AppContainer>
-      <Header title={'Skaggs cards'}>
-        <HeaderNav links={linksArr} />
-      </Header>
       <Main>
         <Routes>
           <Route path="/" element={<HomePage />} />
