@@ -9,7 +9,7 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid black;
+  // border: 2px solid black;
 `
 
 export default function Header(props) {

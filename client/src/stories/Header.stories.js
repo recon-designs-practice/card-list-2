@@ -11,8 +11,8 @@ const Template = (args) => <Header {...args} />
 const linksArr = [
     {text: 'Home', path: '/'},
     {text: 'Add card', path: '/add-card'},
-    {text: 'Brands', path: '/view-brands'},
-    {text: 'Cards', path: '/view-cards'}
+    {text: 'Cards', path: '/view-cards'},
+    {text: 'Brands', path: '/view-brands'}
   ]
 
 export const PrimaryHeader = Template.bind({})
