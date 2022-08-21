@@ -1,7 +1,14 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const PageContainer = styled.div`
+  grid-column: 1 / 13;
+  height: 100vh;
+  border: 4px solid orange;
+`
 
 export default function ViewBrandsPage() {
   return (
-    <div style={{ border: '2px solid orange', height: '100vh' }}>View Brands Page</div>
+    <PageContainer>View Brands Page</PageContainer>
   )
 }

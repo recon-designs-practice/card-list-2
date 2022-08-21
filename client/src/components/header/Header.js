@@ -4,7 +4,11 @@ import PropTypes from 'prop-types'
 import { Heading1 } from '../../theme/type'
 
 const StyledHeader = styled.header`
+  padding: 0px 80px 0px 80px;
+  grid-column: 1 / 15;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   border: 2px solid black;
 `
 
