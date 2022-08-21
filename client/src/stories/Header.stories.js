@@ -1,9 +1,11 @@
+import { withRouter } from 'storybook-addon-react-router-v6'
 import { Header } from '../components'
 import HeaderNav from '../components/header/HeaderNav'
 
 export default {
     title: 'Header',
-    component: Header
+    component: Header,
+    decorators: [withRouter]
 }
 
 const Template = (args) => <Header {...args} />
@@ -17,6 +19,15 @@ const linksArr = [
 
 export const PrimaryHeader = Template.bind({})
 PrimaryHeader.args = {
-    title: 'Hello',
+    title: 'Header title',
     children: <HeaderNav links={linksArr} />
+}
+
+PrimaryHeader.story = {
+    parameters: {
+        routePath: '/',
+        routeParams: { },
+        searchParams: { },
+        routeState: { },
+    }
 }
