@@ -214,6 +214,32 @@ app.get('/brands/:id', async (req, res) => {
     }
 })
 
+/**
+ * Edit brand by id
+ */
+
+app.put('/brands/:id', async (req, res) => {
+    try {
+        const { id } = req.params
+        const { brand_name } = req.body
+
+        const updatedBrand = await pool.query(
+            `
+            UPDATE brandtable
+            SET brand_name = $1
+            WHERE brand_id = $2
+            `,
+            [
+                brand_name,
+                id
+            ]
+        )
+
+        res.json('Item updated')
+    } catch (error) {
+        console.error(error.message)
+    }
+})
 
 
 
@@ -222,8 +248,6 @@ app.get('/brands/:id', async (req, res) => {
 
 
 
-
-// edit a brand
 
 // delete a card
 
