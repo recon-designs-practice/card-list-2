@@ -171,6 +171,29 @@ app.put('/cards/:id', async (req, res) => {
 })
 
 /**
+ * Delete card by id
+ */
+app.delete('/cards/:id', async (req, res) => {
+    try {
+        const { id } = req.params
+
+        const deletedCard = await pool.query(
+            `
+            DELETE FROM cardtable
+            WHERE card_id = $1
+            `,
+            [
+                id
+            ]
+        )
+
+        res.json('Item deleted')
+    } catch (error) {
+        console.error(error.message)
+    }
+})
+
+/**
  * Add a brand
  */
 app.post('/brands', async (req, res) => {
@@ -249,7 +272,6 @@ app.put('/brands/:id', async (req, res) => {
 
 
 
-// delete a card
 
 // delete a brand
 
