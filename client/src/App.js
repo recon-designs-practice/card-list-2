@@ -7,7 +7,8 @@ import {
   ViewCardsPage, 
   ViewBrandsPage 
 } from './pages'
-import { Header } from './components'
+import { Header, Button } from './components'
+import { Paragraph1 } from './theme/type'
 import HeaderNav from './components/header/HeaderNav'
 
 const AppContainer = styled.div`
@@ -39,6 +40,7 @@ function App() {
         <HeaderNav links={linksArr} />
       </Header>
       <Main>
+        <Button><Paragraph1>Here</Paragraph1></Button>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/add-card" element={<AddCardPage />} />

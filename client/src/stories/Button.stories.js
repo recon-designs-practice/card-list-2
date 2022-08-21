@@ -1,4 +1,5 @@
 import { Button } from '../components'
+import { Paragraph1 } from '../theme/type'
 
 export default {
     title: 'Button',
@@ -8,6 +9,6 @@ export default {
 const Template = (args) => <Button {...args} />
 
 export const PrimaryButton = Template.bind({})
-// PrimaryButton.args = {
-
-// }
+PrimaryButton.args = {
+    children: <Paragraph1>Primary</Paragraph1>
+}

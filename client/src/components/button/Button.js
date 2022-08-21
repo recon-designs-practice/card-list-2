@@ -1,7 +1,12 @@
 import React from 'react'
+import styled from 'styled-components'
 
-export default function Button() {
+const StyledButton = styled.button`
+    background: pink;
+`
+
+export default function Button({ children }) {
   return (
-    <button>Button</button>
+    <StyledButton>{children}</StyledButton>
   )
 }
