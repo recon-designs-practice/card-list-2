@@ -8,7 +8,6 @@ const GridLayout = styled.div`
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
-    border: 2px dashed blue;
 `
 
 export default function Layout({ children }) {

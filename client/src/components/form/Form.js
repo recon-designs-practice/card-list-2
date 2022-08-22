@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import { Input, Button } from '../../components'
 import { Heading3, Paragraph1 } from '../../theme/type'
 
@@ -18,7 +19,6 @@ const FormContainer = styled.form`
 
 const Wrapper = styled.div`
     margin-top: 12px;
-    // border: 1px dashed blue;
 `
 
 export default function Form(props) {
@@ -61,4 +61,11 @@ export default function Form(props) {
             </Wrapper>
         </FormContainer>
   )
+}
+
+Form.propTypes = {
+    /**
+     * String to be passed to the title of the form
+     */
+    title: PropTypes.string.isRequired
 }
