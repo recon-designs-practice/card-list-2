@@ -9,7 +9,6 @@ const PageContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: auto;
-  // border: 4px solid red;
 `
 
 export default function AddCardPage() {

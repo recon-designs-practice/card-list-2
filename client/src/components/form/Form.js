@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from "react-router-dom"
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { Input, Button } from '../../components'
@@ -24,6 +25,10 @@ const Wrapper = styled.div`
 export default function Form(props) {
     const [firstName, setFirstName] = useState(null)
     const [lastName, setLastName] = useState(null)
+    const [cardYear, setCardYear] = useState(null)
+    const [cardBrand, setCardBrand] = useState(null)
+    const [cardSet, setCardSet] = useState(null)
+    const navigate = useNavigate()
     const { title } = props
 
     function handleInputChange(e, setter) {
@@ -37,9 +42,13 @@ export default function Form(props) {
 
         const newFormObj = {
             firstName,
-            lastName
+            lastName,
+            cardYear,
+            cardBrand,
+            cardSet
         }
         console.log(newFormObj)
+        navigate('/view-cards')
     }
    
   return (
@@ -52,33 +61,27 @@ export default function Form(props) {
             />
                 
             <Input 
-                id={"firstNameInput"}
+                id={"lastNameInput"}
                 label={"Last name"}
                 onchange={(e) => handleInputChange(e, setLastName)}
             />
 
             <Input 
                 id={"firstNameInput"}
-                label={"Last name"}
-                onchange={(e) => handleInputChange(e, setLastName)}
+                label={"Year"}
+                onchange={(e) => handleInputChange(e, setCardYear)}
             />
 
             <Input 
                 id={"firstNameInput"}
-                label={"Last name"}
-                onchange={(e) => handleInputChange(e, setLastName)}
+                label={"Brand"}
+                onchange={(e) => handleInputChange(e, setCardBrand)}
             />
 
             <Input 
                 id={"firstNameInput"}
-                label={"Last name"}
-                onchange={(e) => handleInputChange(e, setLastName)}
-            />
-
-            <Input 
-                id={"firstNameInput"}
-                label={"Last name"}
-                onchange={(e) => handleInputChange(e, setLastName)}
+                label={"Set"}
+                onchange={(e) => handleInputChange(e, setCardSet)}
             />
             <Wrapper>
                 <Button onclick={(e) => handleClick(e)}><Paragraph1>Save</Paragraph1></Button>
