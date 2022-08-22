@@ -23,6 +23,11 @@ const Wrapper = styled.div`
 
 export default function Form(props) {
     const { title } = props
+
+    function handleClick(e) {
+        e.preventDefault()
+        alert('Button clicked')
+    }
    
   return (
         <FormContainer>
@@ -33,7 +38,7 @@ export default function Form(props) {
                 onchange={(e) => console.log(e.target.value)}
             />
             <Wrapper>
-                <Button><Paragraph1>Save</Paragraph1></Button>
+                <Button onclick={(e) => handleClick(e)}><Paragraph1>Save</Paragraph1></Button>
             </Wrapper>
         </FormContainer>
   )
