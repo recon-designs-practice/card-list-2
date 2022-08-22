@@ -22,20 +22,16 @@ const Wrapper = styled.div`
 `
 
 export default function Form(props) {
-    const { inputs } = props
-    console.log(inputs)
+    const { title } = props
+   
   return (
         <FormContainer>
-            <Heading3>Form heading</Heading3>
-            {inputs.map((input) => {
-                return (
-                    <Input 
-                        id={input.id}
-                        label={input.label}
-                        onchange={input.onchange}
-                    />
-                )
-            })}
+            <Heading3>{title}</Heading3>
+            <Input 
+                id={"input1"}
+                label={"Label 1"}
+                onchange={(e) => console.log(e.target.value)}
+            />
             <Wrapper>
                 <Button><Paragraph1>Save</Paragraph1></Button>
             </Wrapper>
