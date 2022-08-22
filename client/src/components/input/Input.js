@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
 const InputContainer = styled.div`
+    margin-bottom: 12px;
     display: flex;
     flex-direction: column;
 `
