@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
 const InputContainer = styled.div`
+    grid-column: 1 / 6;
+    margin-bottom: 12px;
     display: flex;
     flex-direction: column;
 `
