@@ -1,14 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Form } from '../../components'
 
 const PageContainer = styled.div`
   grid-column: 1 / 13;
-  height: 100vh;
-  border: 4px solid red;
+  padding: 20px 0px 20px 0px;
+  // height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
 `
 
 export default function AddCardPage() {
   return (
-    <PageContainer>Add Card Page</PageContainer>
+    <PageContainer>
+      <Form title={"Add a card"}></Form>
+    </PageContainer>
   )
 }
