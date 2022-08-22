@@ -56,6 +56,30 @@ export default function Form(props) {
                 label={"Last name"}
                 onchange={(e) => handleInputChange(e, setLastName)}
             />
+
+            <Input 
+                id={"firstNameInput"}
+                label={"Last name"}
+                onchange={(e) => handleInputChange(e, setLastName)}
+            />
+
+            <Input 
+                id={"firstNameInput"}
+                label={"Last name"}
+                onchange={(e) => handleInputChange(e, setLastName)}
+            />
+
+            <Input 
+                id={"firstNameInput"}
+                label={"Last name"}
+                onchange={(e) => handleInputChange(e, setLastName)}
+            />
+
+            <Input 
+                id={"firstNameInput"}
+                label={"Last name"}
+                onchange={(e) => handleInputChange(e, setLastName)}
+            />
             <Wrapper>
                 <Button onclick={(e) => handleClick(e)}><Paragraph1>Save</Paragraph1></Button>
             </Wrapper>
