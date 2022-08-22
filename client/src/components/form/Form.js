@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Input, Button } from '../../components'
 import { Heading3, Paragraph1 } from '../../theme/type'
@@ -22,20 +22,39 @@ const Wrapper = styled.div`
 `
 
 export default function Form(props) {
+    const [firstName, setFirstName] = useState(null)
+    const [lastName, setLastName] = useState(null)
     const { title } = props
+
+    function handleInputChange(e, setter) {
+        const { value } = e.target
+
+        setter(() => value)
+    }
 
     function handleClick(e) {
         e.preventDefault()
-        alert('Button clicked')
+
+        const newFormObj = {
+            firstName,
+            lastName
+        }
+        console.log(newFormObj)
     }
    
   return (
         <FormContainer>
             <Heading3>{title}</Heading3>
             <Input 
-                id={"input1"}
-                label={"Label 1"}
-                onchange={(e) => console.log(e.target.value)}
+                id={"firstNameInput"}
+                label={"First name"}
+                onchange={(e) => handleInputChange(e, setFirstName)}
+            />
+                
+            <Input 
+                id={"firstNameInput"}
+                label={"Last name"}
+                onchange={(e) => handleInputChange(e, setLastName)}
             />
             <Wrapper>
                 <Button onclick={(e) => handleClick(e)}><Paragraph1>Save</Paragraph1></Button>
