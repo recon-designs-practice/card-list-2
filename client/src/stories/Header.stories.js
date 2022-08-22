@@ -19,7 +19,7 @@ const linksArr = [
 
 export const PrimaryHeader = Template.bind({})
 PrimaryHeader.args = {
-    title: 'Header title',
+    title: 'Title',
     children: <HeaderNav links={linksArr} />
 }
 
